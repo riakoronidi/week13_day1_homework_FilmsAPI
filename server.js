@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extendd: true}));
 
 app.use(require('./controllers/index'));
 
-app.get('/api/films', function (req, res) {
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 

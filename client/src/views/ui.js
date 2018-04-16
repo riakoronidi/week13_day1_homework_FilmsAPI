@@ -12,6 +12,12 @@ UI.prototype = {
     return p;
   },
 
+  // createLi: function(label, text){
+  //   const li = document.createElement('li')
+  //   li.innerText = `${label}: ${text}`
+  //   return li
+  // },
+
   appendText: function(element, text, label){
     var pTag = this.createText(text, label);
     element.appendChild(pTag);
@@ -21,16 +27,17 @@ UI.prototype = {
     var container = document.getElementById("films");
 
     for(var film of films) {
-      var li = document.createElement("li");
-      this.appendText(li, film.title, "Film: ");
-      // var li1 = document.createElement("li");
-      // this.appendText(li1, film.review, "Review: ");
-      // var li2 = document.createElement("li");
-      // this.appendText(li2, film.genre, "Genre: ");
+      var liTitle = document.createElement("li");
+      this.appendText(liTitle, film.title, "Film: ");
+      var liReview = document.createElement("li");
+      this.appendText(liReview, film.review, "Review: ");
+      var liGenre = document.createElement("li");
+      this.appendText(liGenre, film.genre, "Genre: ");
 
-      container.appendChild(li);
-      // container.appendChild(li1);
-      // container.appendChild(li2);
+      container.appendChild(liTitle);
+      container.appendChild(liReview);
+      container.appendChild(liGenre);
+
     }
   }
 }
